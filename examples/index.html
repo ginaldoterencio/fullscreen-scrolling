@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Fullscreen Scrolling example</title>
+  <meta name="description" content="Fullscreen Scrolling example">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+  <link rel="stylesheet" href="../fullscreen-scrolling.css">
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+    
+    p {
+      margin-bottom: 0;
+      margin-top: 0;
+      position: absolute;
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform .8s ease, opacity .8s ease;
+      text-align: center;
+      top: 47%;
+      left: 0;
+      width: 100%;
+    }
+    
+    .up  p {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    
+    .down p {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    
+    .enteringUp p,
+    .enteringDown p {
+      transition-delay: .4s;
+    }
+  </style>
+</head>
+<body>
+  <div id="sections">
+    <div>
+      <p>Section 1</p>
+    </div>
+    <div>
+      <p>Section 2</p>
+    </div>
+    <div>
+      <p>Section 3</p>
+    </div>
+    <div>
+      <p>Section 4</p>
+    </div>
+    <div>
+      <p>Section 5</p>
+    </div>
+  </div>
+  <script src="../fullscreen-scrolling.js"></script>
+  <script>
+    var instance = new FullscreenScrolling('#sections', {
+      delay: 800
+    });
+  </script>
+</body>
+</html>

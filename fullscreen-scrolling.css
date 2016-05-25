@@ -1,0 +1,26 @@
+.fss-wrap {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.fss-item {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+  width: 100%;
+}
+
+.fss-item.actived,
+.fss-item.leavingUp,
+.fss-item.leavingDown {
+  transform: translateY(0);
+}
+
+.fss-item.actived {
+  z-index: 1;
+}
